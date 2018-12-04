@@ -1,0 +1,248 @@
+// -----------------------------------------------------------------------------
+// CSS animation-name Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include animation-name($value: null, $important: false);
+// -----------------------------------------------------------------------------
+// $value    : keyframename|null|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include animation-name('mymove');
+// -----------------------------------------------------------------------------
+@mixin animation-name($value: null, $important: false) {
+	@include _prefix('animation-name', _none($value), $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS animation-duration Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include animation-duration($value: 0, $important: false);
+// -----------------------------------------------------------------------------
+// $value    : time|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include animation-duration('3s');
+// -----------------------------------------------------------------------------
+@mixin animation-duration($value: 0, $important: false) {
+	@include _prefix('animation-duration', $value, $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS animation-timing-function Property
+// -------
+// Syntax:
+// @include animation-timing-function($value: 'ease', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include animation-timing-function('linear');
+// -----------------------------------------------------------------------------
+@mixin animation-timing-function($value: 'ease', $important: false) {
+	@include _prefix('animation-timing-function', $value, $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS animation-delay Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include animation-delay($value: '0s', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : time|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include animation-delay('2s');
+// -----------------------------------------------------------------------------
+@mixin animation-delay($value: '0s', $important: false) {
+	@include _prefix('animation-delay', $value, $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS animation-iteration-count Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include animation-iteration-count($value: 1, $important: false);
+// -----------------------------------------------------------------------------
+// $value    : number|infinite|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include animation-iteration-count(2);
+// -----------------------------------------------------------------------------
+@mixin animation-iteration-count($value: 1, $important: false) {
+	@include _prefix('animation-iteration-count', $value, $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS animation-direction Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include animation-direction($value: 'normal', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : normal|reverse|alternate|alternate-reverse|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include animation-direction('alternate');
+// -----------------------------------------------------------------------------
+@mixin animation-direction($value: 'normal', $important: false) {
+	@include _prefix('animation-direction', $value, $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS animation-fill-mode Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include animation-fill-mode($value: null, $important: false);
+// -----------------------------------------------------------------------------
+// $value    : null|forwards|backwards|both|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include animation-fill-mode('forwards');
+// -----------------------------------------------------------------------------
+@mixin animation-fill-mode($value: null, $important: false) {
+	@include _prefix('animation-fill-mode', _none($value), $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS animation-play-state Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include animation-play-state($value: 'running', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : paused|running|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include animation-play-state('paused');
+// -----------------------------------------------------------------------------
+@mixin animation-play-state($value: 'running', $important: false) {
+	@include _prefix('animation-play-state', $value, $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS animation Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include _animation($value: 'none 0 ease 0 1 normal none running', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : name duration timing-function delay iteration-count direction fill-mode play-state;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include _animation('mymove 3s linear 2s 2 alternate');
+// -----------------------------------------------------------------------------
+@mixin _animation($value: 'none 0 ease 0 1 normal none running', $important: false) {
+	@include _prefix('animation', $value, $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS @keyframes Rule
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include keyframes($animation-name) { keyframes-selector { css-styles; } }
+// -----------------------------------------------------------------------------
+// $animation-name   : animation name;
+// keyframes-selector: 0%-100%|from(same as 0%)|to(same as 100%);
+// css-styles        : your css styles;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include keyframes('mymove') {
+// 	 0% { width: 50px; }
+// 	 90% { width: 100%; }
+// }
+// -----------------------------------------------------------------------------
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{unquote($animation-name)} {
+		@content;
+	}
+	@keyframes #{unquote($animation-name)} {
+		@content;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// CSS transition-property Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include transition-property($value: 'all', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : none|all|property|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include transition-property('width');
+// -----------------------------------------------------------------------------
+@mixin transition-property($value: 'all', $important: false) {
+	@include _prefix('transition-property', $value, $important, ('webkit', 'o'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS transition-duration Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include transition-duration($value: '0s', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : time|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include transition-duration('5s');
+// -----------------------------------------------------------------------------
+@mixin transition-duration($value: '0s', $important: false) {
+	@include _prefix('transition-duration', $value, $important, ('webkit', 'o'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS transition-timing-function Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include transition-timing-function($value: 'ease', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include transition-timing-function('linear');
+// -----------------------------------------------------------------------------
+@mixin transition-timing-function($value: 'ease', $important: false) {
+	@include _prefix('transition-timing-function', $value, $important, ('webkit', 'o'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS transition-delay Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include transition-delay($value: '0s', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : time|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include transition-delay('2s');
+// -----------------------------------------------------------------------------
+@mixin transition-delay($value: '0s', $important: false) {
+	@include _prefix('transition-delay', $value, $important, ('webkit', 'o'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS _transition Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include transition($value: 'all 0s ease 0s', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : property duration timing-function delay|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include _transition('width 5s linear 2s');
+// -----------------------------------------------------------------------------
+@mixin _transition($value: 'all 0s ease 0s', $important: false) {
+	@include _prefix('transition', $value, $important, ('webkit', 'o'));
+}

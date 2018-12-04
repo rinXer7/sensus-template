@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// SCSS animation Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include animation($name: null, $duration: null, $timing-function: null, $delay: null, $iteration-count: null, $direction: null, $fill-mode: null, $play-state: null, $important: false);
+// -----------------------------------------------------------------------------
+// $name           : keyframename|null|initial|inherit;
+// $duration       : time|initial|inherit;
+// $timing-function: linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
+// $delay          : time|initial|inherit;
+// $iteration-count: number|infinite|initial|inherit;
+// $direction      : normal|reverse|alternate|alternate-reverse|initial|inherit;
+// $fill-mode      : null|forwards|backwards|both|initial|inherit;
+// $play-state     : paused|running|initial|inherit;
+// $important      : true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include animation($name: 'mymove', $duration: '3s', $timing-function: 'linear', $direction: 'alternate');
+// -----------------------------------------------------------------------------
+@mixin animation($name: null, $duration: null, $timing-function: null, $delay: null, $iteration-count: null, $direction: null, $fill-mode: null, $play-state: null, $important: false) {
+	@if $name 					 { @include animation-name($name, $important); }
+	@if $duration 			 { @include animation-duration($duration, $important); }
+	@if $timing-function { @include animation-timing-function($timing-function, $important); }
+	@if $delay 					 { @include animation-delay($delay, $important); }
+	@if $iteration-count { @include animation-iteration-count($iteration-count, $important); }
+	@if $direction 			 { @include animation-direction($direction, $important); }
+	@if $fill-mode 			 { @include animation-fill-mode($fill-mode, $important); }
+	@if $play-state 		 { @include animation-play-state($play-state, $important); }
+}
+
+// -----------------------------------------------------------------------------
+// SCSS transition Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include transition($property: null, $duration: null, $timing-function: null, $delay: null, $important: false);
+// -----------------------------------------------------------------------------
+// $property       : none|all|property|initial|inherit;
+// $duration       : time|initial|inherit;
+// $timing-function: linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
+// $delay          : time|initial|inherit;
+// $important      : true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include transition($property: 'width', $duration: '5s', $timing-function: 'linear', $delay: '2s');
+// -----------------------------------------------------------------------------
+@mixin transition($property: null, $duration: null, $timing-function: null, $delay: null, $important: false) {
+	@if $property { @include transition-property($property, $important); }
+	@if $duration { @include transition-duration($duration, $important); }
+	@if $timing-function { @include transition-timing-function($timing-function, $important); }
+	@if $delay { @include transition-delay($delay, $important); }
+}

@@ -1,0 +1,175 @@
+// -----------------------------------------------------------------------------
+// SCSS clearfix Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include clearfix;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// .clearfix {
+//   @include clearfix;
+// }
+// -----------------------------------------------------------------------------
+@mixin clearfix {
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SCSS margin Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include margin($all: null, $x: null, $y: null, $top: null, $right: null, $bottom: null, $left: null, $important: false);
+// -----------------------------------------------------------------------------
+// $all      : length|auto|initial|inherit;
+// $x        : length|auto|initial|inherit;
+// $y        : length|auto|initial|inherit;
+// $top      : length|auto|initial|inherit;
+// $right    : length|auto|initial|inherit;
+// $bottom   : length|auto|initial|inherit;
+// $left     : length|auto|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include margin($all: '10px', $y: '25px', $x: '55px', $bottom: '100px');
+// -----------------------------------------------------------------------------
+@mixin margin($all: null, $x: null, $y: null, $top: null, $right: null, $bottom: null, $left: null, $important: false) {
+	$marginProperties: 'top' $top, 'right' $right, 'bottom' $bottom, 'left' $left;
+	@each $property, $value in $marginProperties {
+		@if $value == null {
+			@if $all != null {
+				@if $x != null and ($property == 'right' or $property == 'left') {
+					margin-#{unquote($property)}: #{unquote($x)} _important($important);
+				} @else if $y != null and ($property == 'top' or $property == 'bottom') {
+					margin-#{unquote($property)}: #{unquote($y)} _important($important);
+				} @else {
+					margin-#{unquote($property)}: #{unquote($all)} _important($important);
+				}
+			} @else {
+				@if $x != null and ($property == 'right' or $property == 'left') {
+					margin-#{unquote($property)}: #{unquote($x)} _important($important);
+				} @else if $y != null and ($property == 'top' or $property == 'bottom') {
+					margin-#{unquote($property)}: #{unquote($y)} _important($important);
+				}
+			}
+		} @else {
+			margin-#{unquote($property)}: #{unquote($value)} _important($important);
+		}
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SCSS padding Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include padding($all: null, $x: null, $y: null, $top: null, $right: null, $bottom: null, $left: null, $important: false);
+// -----------------------------------------------------------------------------
+// $all      : length|auto|initial|inherit;
+// $x        : length|auto|initial|inherit;
+// $y        : length|auto|initial|inherit;
+// $top      : length|auto|initial|inherit;
+// $right    : length|auto|initial|inherit;
+// $bottom   : length|auto|initial|inherit;
+// $left     : length|auto|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include padding($all: '10px', $y: '25px', $x: '55px', $bottom: '100px');
+// -----------------------------------------------------------------------------
+@mixin padding($all: null, $x: null, $y: null, $top: null, $right: null, $bottom: null, $left: null, $important: false) {
+	$paddingProperties: 'top' $top, 'right' $right, 'bottom' $bottom, 'left' $left;
+	@each $property, $value in $paddingProperties {
+		@if $value == null {
+			@if $all != null {
+				@if $x != null and ($property == 'right' or $property == 'left') {
+					padding-#{unquote($property)}: #{unquote($x)} _important($important);
+				} @else if $y != null and ($property == 'top' or $property == 'bottom') {
+					padding-#{unquote($property)}: #{unquote($y)} _important($important);
+				}	@else {
+					padding-#{unquote($property)}: #{unquote($all)} _important($important);
+				}
+			} @else {
+				@if $x != null and ($property == 'right' or $property == 'left') {
+					padding-#{unquote($property)}: #{unquote($x)} _important($important);
+				} @else if $y != null and ($property == 'top' or $property == 'bottom') {
+					padding-#{unquote($property)}: #{unquote($y)} _important($important);
+				}
+			}
+		} @else {
+			padding-#{unquote($property)}: #{unquote($value)} _important($important);
+		}
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SCSS position Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include position($property: 'static', $all: null, $x: null, $y: null, $top: null, $right: null, $bottom: null, $left: null, $important: false);
+// -----------------------------------------------------------------------------
+// $position : static|absolute|fixed|relative|sticky|initial|inherit;
+// $all      : auto|length|initial|inherit;
+// $x        : auto|length|initial|inherit;
+// $y        : auto|length|initial|inherit;
+// $top      : auto|length|initial|inherit;
+// $right    : auto|length|initial|inherit;
+// $bottom   : auto|length|initial|inherit;
+// $left     : auto|length|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include position(
+//   $property: 'fixed',
+//   $all			: 0,
+//   $bottom	: 'auto'
+// );
+// -----------------------------------------------------------------------------
+@mixin position($property: 'static', $all: null, $z-index: null, $x: null, $y: null, $top: null, $right: null, $bottom: null, $left: null, $important: false) {
+	@if $property == 'sticky' {
+		position: -webkit-sticky;
+		position: sticky;
+	} @else {
+		position: #{unquote($property)};
+	}
+	$positionProperties: 'top' $top, 'right' $right, 'bottom' $bottom, 'left' $left;
+	@each $positionProperty, $value in $positionProperties {
+		@if $value == null {
+			@if $all != null {
+				@if $x != null and ($positionProperty == 'right' or $positionProperty == 'left') {
+					#{unquote($positionProperty)}: #{unquote($x)} _important($important);
+				} @else if $y != null and ($positionProperty == 'top' or $positionProperty == 'bottom') {
+					#{unquote($positionProperty)}: #{unquote($y)} _important($important);
+				} @else {
+					#{unquote($positionProperty)}: #{unquote($all)} _important($important);
+				}
+			} @else {
+				@if $x != null and ($positionProperty == 'right' or $positionProperty == 'left') {
+					#{unquote($positionProperty)}: #{unquote($x)} _important($important);
+				} @else if $y != null and ($positionProperty == 'top' or $positionProperty == 'bottom') {
+					#{unquote($positionProperty)}: #{unquote($y)} _important($important);
+				}
+			}
+		} @else {
+			#{unquote($positionProperty)}: #{unquote($value)} _important($important);
+		}
+	}
+	@if $z-index {
+		z-index: unquote($z-index);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SCSS selection Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include selection;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include selection {...}
+// -----------------------------------------------------------------------------
+@mixin selection {
+	::-moz-selection { @content; }
+	::selection { @content; }
+}

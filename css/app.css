@@ -1,0 +1,11 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+@font-face {
+  font-family: 'UVF NarzissDrops';
+  src: url("uvf_narziss-drops-webfont.woff2") format("woff2"), url("uvf_narziss-drops-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+header.main-header span {
+  font-family: 'UVF NarzissDrops', sans-serif;
+  font-size: 48px; }
+
+/*# sourceMappingURL=app.css.map */

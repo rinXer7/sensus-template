@@ -1,0 +1,138 @@
+// -----------------------------------------------------------------------------
+// SCSS _get Function from doPXL
+// -----------------------------------------------------------------------------
+// Description:
+// If you are bored with nth() or map-get() functions, you can use this function.
+// This function works for list as well as for maps.
+// -----------------------------------------------------------------------------
+// Syntax:
+// _get($variable, $value);
+// -----------------------------------------------------------------------------
+// $$variable: list variable|map variable;
+// $value		 : ...;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// $mobile-size: get($breakpoints, 'mobile');
+// -----------------------------------------------------------------------------
+@function _get($variable, $value) {
+	@if type-of($variable) == 'list' {
+		@return nth($variable, $value);
+	} @else if type-of($variable) == 'map' {
+		@return map-get($variable, $value);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SCSS _important Function from doPXL
+// -----------------------------------------------------------------------------
+// Description:
+// This function returns "!important" key according to the given value.
+// This function is usually used in mixins. But that does not mean you cannot use other places.
+// -----------------------------------------------------------------------------
+// Syntax:
+// _important($important);
+// -----------------------------------------------------------------------------
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// $important: true;
+// display: block _important($important);
+// -----------------------------------------------------------------------------
+@function _important($important) {
+	@if $important == true or $important == '!important' {
+		@return unquote('!important');
+	} @else {
+		@return null;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SCSS _none Function from doPXL
+// -----------------------------------------------------------------------------
+// Description:
+// This function returns "none" key according to the given value.
+// This function is usually used in mixins. But that does not mean you cannot use other places.
+// -----------------------------------------------------------------------------
+// Syntax:
+// _none($value);
+// -----------------------------------------------------------------------------
+// $value: null|...;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// $none: null;
+// box-shadow: _none($none);
+// -----------------------------------------------------------------------------
+@function _none($value) {
+	@if $value == null {
+		@return unquote('none');
+	} @else {
+		@return unquote($value);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SCSS _color Function from doPXL
+// -----------------------------------------------------------------------------
+// Description:
+// This function returns a color according to the given value from $colors variable.
+// -----------------------------------------------------------------------------
+// Syntax:
+// _color($color);
+// -----------------------------------------------------------------------------
+// $color: values according to $colors variable;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// background-color: _color('bg');
+// -----------------------------------------------------------------------------
+@function _color($color) {
+	$length: length($colors) - 1;
+	$others: map-get($colors, 'others');
+
+	@if type-of($color) == 'number' {
+		@if $color > $length {
+			@error '#{$color}. color has not defined in $colors variable. Check it please!';
+		} @else {
+			@return map-get($colors, $color);
+		}
+	} @else {
+		@if map-get($others, $color) {
+			@return map-get($others, $color);
+		} @else {
+			@error '"#{$color}" has not defined in \'others\' inside $colors variable. Check it please!';
+		}
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SCSS _font Function from doPXL
+// -----------------------------------------------------------------------------
+// Description:
+// This function returns a font according to the given value from $font variable.
+// -----------------------------------------------------------------------------
+// Syntax:
+// _font($font);
+// -----------------------------------------------------------------------------
+// $font: values according to $fonts variable;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// background-color: _font('bg');
+// -----------------------------------------------------------------------------
+@function _font($font) {
+	$length: length($fonts) - 1;
+	$icons: map-get($fonts, 'icons');
+
+	@if type-of($font) == 'number' {
+		@if $font > $length {
+			@error '#{$font}. font has not defined in $fonts variable. Check it please!';
+		} @else {
+			@return map-get($fonts, $font);
+		}
+	} @else {
+
+		@if map-get($icons, $font) {
+			@return map-get($icons, $font);
+		} @else {
+			@error '"#{$font}" has not defined in \'icons\' inside $fonts variable. Check it please!';
+		}
+	}
+}

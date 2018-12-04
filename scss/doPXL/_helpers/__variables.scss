@@ -1,0 +1,49 @@
+// Color Settings
+$colors: (
+	1				: #ff4d4d,
+	2				: #4b4b4b,
+	3				: #7d5fff,
+	'others': (
+		'bg'		: #ff4d4d,
+		'font'	: #4b4b4b,
+		'anchor': #7d5fff
+	)
+);
+
+// Font Settings
+$fonts: (
+	1			 : unquote('\'Montserrat\', sans-serif'),
+	2			 : unquote('\'Roboto\', sans-serif'),
+	'icons': (
+		 'fa': quote('Font Awesome 5 Free')
+	)
+);
+$font-size: 14px;
+
+// Breakpoint Settings
+$breakpoints: (
+	'desktop': 1024px,
+	'tablet' : 768px,
+	'mobile' : 767px
+);
+
+// Grid Settings
+$container-width: 1024px;
+$innerGutter		: 10px;
+$outerGutter		: 10px;
+
+// Modal Settings
+$modal: (
+	'bg_color'		 : rgba(#222f3e, .5),
+	'width'				 : 800px,
+	'header_height': 50px,
+	'body_height'	 : 500px
+);
+
+$zindex: (
+	'navbar'		 : 10,
+	'dropdown_bg': 20,
+	'dropdown'	 : 30,
+	'modal_bg'	 : 40,
+	'modal'			 : 50
+);

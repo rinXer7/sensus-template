@@ -1,0 +1,14 @@
+@mixin wh100($important: false) {
+	width: 100% _important($important);
+	height: 100% _important($important);
+}
+
+@mixin visible($visibility) {
+	visibility: if($visibility, unquote('visible'), unquote('hidden'));
+	opacity: if($visibility, 1, 0);
+}
+
+@mixin mp0($important: false) {
+	margin: 0 _important($important);
+	padding: 0 _important($important);
+}

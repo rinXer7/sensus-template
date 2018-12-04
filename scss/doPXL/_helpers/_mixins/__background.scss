@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// SCSS background Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include background($image: null, $position: null, $size: null, $repeat: null, $attachment: null, $origin: null, $clip: null, $color: null, $important: false);
+// -----------------------------------------------------------------------------
+// $image			: url|none|initial|inherit;;
+// $position	: value;
+// $size			: auto|length|cover|contain|initial|inherit;
+// $repeat		: repeat|repeat-x|repeat-y|no-repeat|initial|inherit;
+// $attachment: scroll|fixed|local|initial|inherit;
+// $origin		: padding-box|border-box|content-box|initial|inherit;
+// $clip			: border-box|padding-box|content-box|initial|inherit;
+// $color			: color|transparent|initial|inherit;
+// $important	: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include background(
+//   $image		 : '../img/deneme.jpg',
+//   $size		 : 'cover',
+//   $repeat	 : 'no-repeat',
+//   $position : 'center center',
+//   $important: true
+// );
+// -----------------------------------------------------------------------------
+@mixin background($image: null, $position: null, $size: null, $repeat: null, $attachment: null, $origin: null, $clip: null, $color: null, $important: false) {
+	$properties: (
+		'image' $image,
+		'position' $position,
+		'size' $size,
+		'repeat' $repeat,
+		'attachment' $attachment,
+		'origin' $origin,
+		'clip' $clip,
+		'color' $color
+	);
+	@each $property, $value in $properties {
+		@if $value {
+			@if $property == 'image' {
+				background-#{unquote($property)}: #{'url(' + unquote($value) + ')'} _important($important);
+			} @else {
+				background-#{unquote($property)}: #{unquote($value)} _important($important);
+			}
+		}
+	}
+}

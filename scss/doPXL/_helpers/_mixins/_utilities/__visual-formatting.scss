@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// CSS box-shadow Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include box-shadow($h: 0, $v: 0, $blur: 0, $spread: null, $color: null, $inset: false, $important: false);
+// -----------------------------------------------------------------------------
+// $h				 : number;
+// $v				 : number;
+// $blur		 : number;
+// $spread	 : number;
+// $color		 : color;
+// $inset		 : true|false;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include box-shadow(
+//   $v		 : 5px,
+//   $blur : 10px,
+//   $inset: true,
+//   $color: rgba(red, .25)
+// );
+// -----------------------------------------------------------------------------
+@mixin box-shadow($h: 0, $v: 0, $blur: 0, $spread: null, $color: null, $inset: false, $important: false) {
+	$properties: 'horizontal' $h, 'vertical' $v, 'blur' $blur, 'spread' $spread, 'color' $color;
+	$result: if($inset, 'inset ', '');
+	@each $property, $value in $properties {
+		@if $value {
+			$result: $result + ' ' + $value;
+		}
+	}
+	@include _prefix('box-shadow', unquote($result), $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS box-sizing Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include box-sizing($value: 'content-box', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : content-box|border-box|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include box-sizing('border-box');
+// -----------------------------------------------------------------------------
+@mixin box-sizing($value: 'content-box', $important: false) {
+	@include _prefix('box-sizing', $value, $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS filter Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include filter($filter: 'none', $important: false);
+// -----------------------------------------------------------------------------
+// $filter	 : none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia() | url();
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include filter('grayscale(100%)');
+// -----------------------------------------------------------------------------
+@mixin filter($filter: 'none', $important: false) {
+	@include _prefix('filter', unquote($filter), $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS user-select Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include user-select($value: 'auto', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : auto|none|text|all;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include user-select('none');
+// -----------------------------------------------------------------------------
+@mixin user-select($value: 'auto', $important: false) {
+	@include _prefix('user-select', $value, $important, ('webkit', 'moz', 'ms'));
+}

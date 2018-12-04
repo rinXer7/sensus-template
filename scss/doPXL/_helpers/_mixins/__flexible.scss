@@ -1,0 +1,62 @@
+// -----------------------------------------------------------------------------
+// SCSS flexible Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include flexible($flexbox: null, $direction: null, $wrap: null, $justify-content: null, $align-items: null, $align-content: null, $important: false);
+// -----------------------------------------------------------------------------
+// $flexbox	 : flex|inline-flex|none|initial|inherit;
+// $direction: row|row-reverse|column|column-reverse|initial|inherit;
+// $wrap		 : nowrap|wrap|wrap-reverse|initial|inherit;
+// $justify	 : flex-start|flex-end|center|space-between|space-around|initial|inherit;
+// $items		 : stretch|center|flex-start|flex-end|baseline|initial|inherit;
+// $align		 : stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include flexible(
+//   $direction'			: 'col-reverse',
+//   $wrap'						:	'wrap',
+//   $justify-content': 'between'
+// );
+// -----------------------------------------------------------------------------
+@mixin flexible($flexbox: null, $direction: null, $wrap: null, $justify: null, $items: null, $align: null, $important: false) {
+	@if $flexbox {
+		@include flexbox($flexbox, $important);
+	} @else {
+		@include flexbox();
+	}
+
+	@if $direction { @include flex-direction($direction, $important); }
+	@if $wrap			 { @include flex-wrap($wrap, $important); }
+	@if $justify	 { @include justify-content($justify, $important); }
+	@if $items		 { @include align-items($items, $important); }
+	@if $align		 { @include align-content($align, $important); }
+}
+
+// -----------------------------------------------------------------------------
+// SCSS flexible-item Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include flexible-item($order: null, $grow: null, $shrink: null, $basis: null, $align-self: null, $important: false);
+// -----------------------------------------------------------------------------
+// $order		 : number|initial|inherit;
+// $grow		 : number|initial|inherit;
+// $shrink	 : number|initial|inherit;
+// $basis		 : number|auto|initial|inherit;
+// $align		 : auto|stretch|center|flex-start|flex-end|baseline|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include flexible-item(
+//   $grow : 1,
+//   $basis:	45%,
+//   $align: 'center'
+// );
+// -----------------------------------------------------------------------------
+@mixin flexible-item($order: null, $grow: null, $shrink: null, $basis: null, $align: null, $important: false) {
+	@if $order	{ @include order($order, $important); }
+	@if $grow		{ @include flex-grow($grow, $important); }
+	@if $shrink { @include flex-shrink($shrink, $important); }
+	@if $basis	{ @include flex-basis($basis, $important); }
+	@if $align	{ @include align-self($align, $important); }
+}

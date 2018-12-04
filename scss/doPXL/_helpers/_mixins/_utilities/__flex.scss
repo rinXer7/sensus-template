@@ -1,0 +1,361 @@
+// -----------------------------------------------------------------------------
+// SCSS flexbox Mixin
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include flexbox($value: 'flex', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : flex|inline-flex|none|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include flexbox();
+// -----------------------------------------------------------------------------
+@mixin flexbox($value: 'flex', $important: false) {
+	@if $value == 'flex' or $value == 'block' {
+		display: -webkit-box _important($important);
+		display: -ms-flexbox _important($important);
+		display: flex _important($important);
+	} @else if $value == 'inline-flex' or $value == 'inline' {
+		display: -webkit-inline-box _important($important);
+		display: -ms-inline-flexbox _important($important);
+		display: inline-flex _important($important);
+	} @else {
+		display: unquote($value) _important($important);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// CSS flex-direction Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include flex-direction($value: 'row', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : row|row-reverse|column|column-reverse|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include flex-direction('row-reverse');
+// -----------------------------------------------------------------------------
+@mixin flex-direction($value: 'row', $important: false) {
+	@if $value == 'row' {
+		-webkit-box-orient: horizontal _important($important);
+		-webkit-box-direction: normal _important($important);
+		-ms-flex-direction: row _important($important);
+		flex-direction: row _important($important);
+	} @else if $value == 'row-reverse' {
+		-webkit-box-orient: horizontal _important($important);
+		-webkit-box-direction: reverse _important($important);
+		-ms-flex-direction: row-reverse _important($important);
+		flex-direction: row-reverse _important($important);
+	} @else if $value == 'column' or $value == 'col' {
+		-webkit-box-orient: vertical _important($important);
+		-webkit-box-direction: normal _important($important);
+		-ms-flex-direction: column _important($important);
+		flex-direction: column _important($important);
+	} @else if $value == 'column-reverse' or $value == 'col-reverse' {
+		-webkit-box-orient: vertical _important($important);
+		-webkit-box-direction: reverse _important($important);
+		-ms-flex-direction: column-reverse _important($important);
+		flex-direction: column-reverse _important($important);
+	} @else {
+		-webkit-box-orient: unquote($value) _important($important);
+		-webkit-box-direction: unquote($value) _important($important);
+		-ms-flex-direction: unquote($value) _important($important);
+		flex-direction: unquote($value) _important($important);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// CSS flex-wrap Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include flex-wrap($value: 'nowrap', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : nowrap|wrap|wrap-reverse|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include flex-wrap('wrap');
+// -----------------------------------------------------------------------------
+@mixin flex-wrap($value: 'nowrap', $important: false) {
+	-ms-flex-wrap: unquote($value) _important($important);
+	flex-wrap: unquote($value) _important($important);
+}
+
+// -----------------------------------------------------------------------------
+// CSS flex-flow Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include flex-flow($value: 'row nowrap', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : flex-direction flex-wrap|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include flex-flow('row-reverse wrap');
+// -----------------------------------------------------------------------------
+@mixin flex-flow($value: 'row nowrap', $important: false) {
+	$direction-index: unquote(str-index($value, ' ')) - 1;
+	$direction: unquote(str-slice($value, 0, $direction-index));
+
+	@if $direction == 'row' {
+		-webkit-box-orient: horizontal _important($important);
+		-webkit-box-direction: normal _important($important);
+	} @else if $direction == 'row-reverse' {
+		-webkit-box-orient: horizontal _important($important);
+		-webkit-box-direction: reverse _important($important);
+	} @else if $direction == 'column' {
+		-webkit-box-orient: vertical _important($important);
+		-webkit-box-direction: normal _important($important);
+	} @else if $direction == 'column-reverse' {
+		-webkit-box-orient: vertical _important($important);
+		-webkit-box-direction: reverse _important($important);
+	}
+
+	-ms-flex-flow: unquote($value) _important($important);
+	flex-flow: unquote($value) _important($important);
+}
+
+// -----------------------------------------------------------------------------
+// CSS justify-content Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include justify-content($value: 'flex-start', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : flex-start|flex-end|center|space-between|space-around|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include justify-content('space-around');
+// -----------------------------------------------------------------------------
+@mixin justify-content($value: 'flex-start', $important: false) {
+	@if $value == 'flex-start' or $value == 'start' {
+		-webkit-box-pack: start _important($important);
+		-ms-flex-pack: start _important($important);
+		justify-content: flex-start _important($important);
+	} @else if $value == 'flex-end' or $value == 'end' {
+		-webkit-box-pack: end _important($important);
+		-ms-flex-pack: end _important($important);
+		justify-content: flex-end _important($important);
+	} @else if $value == 'center' {
+		-webkit-box-pack: center _important($important);
+		-ms-flex-pack: center _important($important);
+		justify-content: center _important($important);
+	} @else if $value == 'space-between' or $value == 'justify' or $value == 'between' {
+		-webkit-box-pack: justify _important($important);
+		-ms-flex-pack: justify _important($important);
+		justify-content: space-between _important($important);
+	} @else if $value == 'space-around' or $value == 'distribute' or $value == 'around' {
+		-ms-flex-pack: distribute _important($important);
+		justify-content: space-around _important($important);
+	} @else {
+		-webkit-box-pack: unquote($value) _important($important);
+		-ms-flex-pack: unquote($value) _important($important);
+		justify-content: unquote($value) _important($important);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// CSS align-items Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include align-items($value: 'stretch', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : stretch|center|flex-start|flex-end|baseline|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include align-items('center');
+// -----------------------------------------------------------------------------
+@mixin align-items($value: 'stretch', $important: false) {
+	@if $value == 'stretch' {
+		-webkit-box-align: stretch _important($important);
+		-ms-flex-align: stretch _important($important);
+		align-items: stretch _important($important);
+	} @else if $value == 'center' {
+		-webkit-box-align: center _important($important);
+		-ms-flex-align: center _important($important);
+		align-items: center _important($important);
+	} @else if $value == 'flex-start' or $value == 'start' {
+		-webkit-box-align: start _important($important);
+		-ms-flex-align: start _important($important);
+		align-items: flex-start _important($important);
+	} @else if $value == 'flex-end' or $value == 'end' {
+		-webkit-box-align: end _important($important);
+		-ms-flex-align: end _important($important);
+		align-items: flex-end _important($important);
+	} @else if $value == 'baseline' {
+		-webkit-box-align: baseline _important($important);
+		-ms-flex-align: baseline _important($important);
+		align-items: baseline _important($important);
+	} @else {
+		-webkit-box-align: unquote($value) _important($important);
+		-ms-flex-align: unquote($value) _important($important);
+		align-items: unquote($value) _important($important);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// CSS align-content Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include align-content($value: 'stretch', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include align-content('center');
+// -----------------------------------------------------------------------------
+@mixin align-content($value: 'stretch', $important: false) {
+	@if $value == 'stretch' {
+		-ms-flex-line-pack: stretch _important($important);
+		align-content: stretch _important($important);
+	} @else if $value == 'center' {
+		-ms-flex-line-pack: center _important($important);
+		align-content: center _important($important);
+	} @else if $value == 'flex-start' or $value == 'start' {
+		-ms-flex-line-pack: start _important($important);
+		align-content: flex-start _important($important);
+	} @else if $value == 'flex-end' or $value == 'end' {
+		-ms-flex-line-pack: end _important($important);
+		align-content: flex-end _important($important);
+	} @else if $value == 'space-between' or $value == 'justify' or $value == 'between' {
+		-ms-flex-line-pack: justify _important($important);
+		align-content: space-between _important($important);
+	} @else if $value == 'space-around' or $value == 'distribute' or $value == 'around' {
+		-ms-flex-line-pack: distribute _important($important);
+		align-content: space-around _important($important);
+	} @else {
+		-ms-flex-line-pack: unquote($value) _important($important);
+		align-content: unquote($value) _important($important);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// CSS order Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include order($value: 0, $important: false);
+// -----------------------------------------------------------------------------
+// $value    : number|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include order(-1);
+// -----------------------------------------------------------------------------
+@mixin order($value: 0, $important: false) {
+	-webkit-box-ordinal-group: (unquote($value) + 1) _important($important);
+	-ms-flex-order: unquote($value) _important($important);
+	order: unquote($value) _important($important);
+}
+
+// -----------------------------------------------------------------------------
+// CSS flex-grow Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include flex-grow($value: 0, $important: false);
+// -----------------------------------------------------------------------------
+// $value    : number|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include flex-grow(3);
+// -----------------------------------------------------------------------------
+@mixin flex-grow($value: 0, $important: false) {
+	-webkit-box-flex: unquote($value) _important($important);
+	-ms-flex-positive: unquote($value) _important($important);
+	flex-grow: unquote($value) _important($important);
+}
+
+// -----------------------------------------------------------------------------
+// CSS flex-shrink Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include flex-shrink($value: 1, $important: false);
+// -----------------------------------------------------------------------------
+// $value    : number|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include flex-shrink(3);
+// -----------------------------------------------------------------------------
+@mixin flex-shrink($value: 1, $important: false) {
+	-ms-flex-negative: unquote($value) _important($important);
+	flex-shrink: unquote($value) _important($important);
+}
+
+// -----------------------------------------------------------------------------
+// CSS flex-basis Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include flex-basis($value: 'auto', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : number|auto|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include flex-basis(80px);
+// -----------------------------------------------------------------------------
+@mixin flex-basis($value: 'auto', $important: false) {
+	-ms-flex-preferred-size: unquote($value) _important($important);
+	flex-basis: unquote($value) _important($important);
+}
+
+// -----------------------------------------------------------------------------
+// CSS flex Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include flex($value: '0 1 auto', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : flex-grow flex-shrink flex-basis|auto|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include flex('1 1 300px');
+// -----------------------------------------------------------------------------
+@mixin flex($value: '0 1 auto', $important: false) {
+	$flex-index: unquote(str-index($value, ' ')) - 1;
+	$flex: unquote(str-slice($value, 0, $flex-index));
+
+	-webkit-box-flex: $flex;
+	-ms-flex: unquote($value);
+	flex: unquote($value);
+}
+
+// -----------------------------------------------------------------------------
+// CSS align-self Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include align-self($value: 'auto', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : auto|stretch|center|flex-start|flex-end|baseline|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include align-self('center');
+// -----------------------------------------------------------------------------
+@mixin align-self($value: 'auto', $important: false) {
+	@if $value == 'auto' {
+		-ms-flex-item-align: auto _important($important);
+		align-self: auto _important($important);
+	} @else if $value == 'stretch' {
+		-ms-flex-item-align: stretch _important($important);
+		align-self: stretch _important($important);
+	} @else if $value == 'center' {
+		-ms-flex-item-align: center _important($important);
+		align-self: center _important($important);
+	} @else if $value == 'flex-start' or $value == 'start' {
+		-ms-flex-item-align: start _important($important);
+		align-self: flex-start _important($important);
+	} @else if $value == 'flex-end' or $value == 'end' {
+		-ms-flex-item-align: end _important($important);
+		align-self: flex-end _important($important);
+	} @else if $value == 'baseline' {
+		-ms-flex-item-align: baseline _important($important);
+		align-self: baseline _important($important);
+	} @else {
+		-ms-flex-item-align: unquote($value) _important($important);
+		align-self: unquote($value) _important($important);
+	}
+}

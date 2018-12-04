@@ -1,0 +1,124 @@
+// -----------------------------------------------------------------------------
+// CSS transform Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include transform($args: 'none', $important: false);
+// -----------------------------------------------------------------------------
+// $args     : transform methods;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// 2D Transform Methods
+// matrix(n,n,n,n,n,n)
+// translate(x,y)
+// translateX(n)
+// translateY(n)
+// scale(x,y)
+// scaleX(n)
+// scaleY(n)
+// rotate(angle)
+// skew(x-angle,y-angle)
+// skewX(angle)
+// skewY(angle)
+// -----------------------------------------------------------------------------
+// 3D Transform Methods
+// matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)
+// translate3d(x,y,z)
+// translateX(x)
+// translateY(y)
+// translateZ(z)
+// scale3d(x,y,z)
+// scaleX(x)
+// scaleY(y)
+// scaleZ(z)
+// rotate3d(x,y,z,angle)
+// rotateX(angle)
+// rotateY(angle)
+// rotateZ(angle)
+// perspective(n)
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include transform('translateX(-50%) rotate(-90deg)');
+// -----------------------------------------------------------------------------
+@mixin transform($args: 'none', $important: false) {
+	@include _prefix('transform', unquote($args), $important, ('webkit', 'ms'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS transform-origin Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include transform-origin($args: 50% 50% 0, $important: false);
+// -----------------------------------------------------------------------------
+// $args     : x-axis y-axis z-axis|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include transform-origin(20% 40%);
+// -----------------------------------------------------------------------------
+@mixin transform-origin($args: 50% 50% 0, $important: false) {
+	@include _prefix('transform-origin', unquote($args), $important, ('webkit', 'ms'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS transform-style Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include transform-style($value: 'flat', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : flat|preserve-3d|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include transform-style('preserve-3d');
+// -----------------------------------------------------------------------------
+@mixin transform-style($value: 'flat', $important: false) {
+	@include _prefix('transform-style', unquote($value), $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS perspective Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include perspective($value: 'none', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : length|none;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include perspective(500px);
+// -----------------------------------------------------------------------------
+@mixin perspective($value: 'none', $important: false) {
+	@include _prefix('perspective', unquote($value), $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS perspective-origin Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include perspective-origin($value: 50% 50%, $important: false);
+// -----------------------------------------------------------------------------
+// $value    : x-axis y-axis|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include perspective-origin(10% 10%);
+// -----------------------------------------------------------------------------
+@mixin perspective-origin($value: 50% 50%, $important: false) {
+	@include _prefix('perspective-origin', unquote($value), $important, ('webkit'));
+}
+
+// -----------------------------------------------------------------------------
+// CSS backface-visibility Property
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include backface-visibility($value: 'visible', $important: false);
+// -----------------------------------------------------------------------------
+// $value    : visible|hidden|initial|inherit;
+// $important: true|false;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include backface-visibility('hidden');
+// -----------------------------------------------------------------------------
+@mixin backface-visibility($value: 'visible', $important: false) {
+	@include _prefix('backface-visibility', unquote($value), $important, ('webkit'));
+}

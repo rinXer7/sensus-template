@@ -392,8 +392,22 @@ section.home_gallery {
   @media only screen and (max-width: 400px) {
     .home_gallery__item {
       width: 100%; } }
+  .home_gallery__item a {
+    display: block;
+    width: 100%;
+    overflow: hidden; }
+    .home_gallery__item a:hover img {
+      -webkit-transform: scale(1.1) ;
+      -ms-transform: scale(1.1) ;
+      transform: scale(1.1) ; }
   .home_gallery__item img {
-    width: 100%; }
+    width: 100%;
+    -webkit-transition-property: all ;
+    -o-transition-property: all ;
+    transition-property: all ;
+    -webkit-transition-duration: 500ms ;
+    -o-transition-duration: 500ms ;
+    transition-duration: 500ms ; }
 
 section.banner-slider {
   background-color: #565251;

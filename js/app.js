@@ -14,6 +14,13 @@ $(document).ready(function() {
     nav: false
   });
 
+  $('a.main-sidebar-menu__scrollableItem').click(function() {
+    var href = $(this).attr('href'),
+        scroll = $(href).offset().top;
+    $('html, body').stop().animate({ scrollTop: scroll }, 500, 'swing');
+    return false;
+  });
+
   var prevButton = `
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.5px" height="51.5px">
 	  <path fill-rule="evenodd" stroke="rgb(191, 191, 191)" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M23.500,47.500 L1.500,24.500 L24.500,2.500 "/>

@@ -1,0 +1,84 @@
+footer.main-footer {
+  background-color: #565251;
+  padding: 30px 0;
+}
+
+a.main-footer__brand {
+  display: inline-block;
+  text-align: center;
+
+  img {
+    height: 100px;
+  }
+}
+
+.custom-text-left {
+  text-align: left;
+
+  @include media('down', 991px) {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+.custom-text-right {
+  text-align: right;
+
+  @include media('down', 991px) {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+ul.main-footer__phone-list {
+  @include mp0;
+  list-style: none;
+
+  li {
+    font-family: _font(2);
+    font-size: 16px;
+    span {
+      display: inline-block;
+      width: 120px;
+      color: darken(#fff, 20%);
+    }
+
+    a {
+      color: darken(#fff, 20%);
+    }
+  }
+}
+
+ul.main-footer__social-media {
+  margin: 0 -5px;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin: 0 5px;
+
+    a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border: 1px darken(#fff, 20%) solid;
+      border-radius: 100%;
+      color: darken(#fff, 20%);
+      font-size: 24px;
+      @include transition(all, 500ms);
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+}
+
+span.main-footer__copyright {
+  display: block;
+  color: darken(#fff, 20%);
+  font-family: _font(2);
+  padding-top: 20px;
+}

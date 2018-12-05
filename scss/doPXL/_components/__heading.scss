@@ -1,0 +1,13 @@
+h1.custom-section-heading,
+h2.custom-section-heading,
+h3.custom-section-heading,
+h4.custom-section-heading,
+h5.custom-section-heading,
+h6.custom-section-heading {
+  @include mp0;
+  text-transform: uppercase;
+  font: {
+    family: _font(2);
+    weight: bold;
+  }
+}

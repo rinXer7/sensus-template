@@ -1,0 +1,348 @@
+section.main-hero {
+  height: 100vh;
+}
+
+.main-hero__item {
+  width: 100vw;
+  height: 100vh;
+  @include background(
+    $repeat: 'no-repeat',
+    $size: 'cover',
+    $position: 'center'
+  );
+  @include flexible(
+    $items: 'end'
+  );
+
+  h1 {
+    max-width: 480px;
+    margin: 150px 50px;
+    padding: 0;
+    font: {
+      size: 30px;
+      family: 'Cardo', sans-serif;
+      style: italic;
+    }
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media only screen and (max-height: 700px) {
+      margin: 20px 50px;
+    }
+
+    @include media('down', 600px) {
+      font-size: 20px;
+    }
+
+    span {
+
+      b {
+        font-size: 42px;
+      }
+    }
+
+    i {
+      display: block;
+      font-size: 48px;
+      color: #fff;
+      padding: 5px 0;
+
+      @include media('down', 600px) {
+        font-size: 36px;
+      }
+    }
+  }
+}
+
+
+section.home_about-us {
+  background-color: #fff;
+}
+
+.home_about-us__container {
+  width: 45%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 0;
+
+  @include media('down', 991px) {
+    width: 75%;
+  }
+
+  @include media('down', 767px) {
+    width: 100%;
+  }
+
+  p {
+    @include mp0;
+    font: {
+      family: _font(2);
+      size: 18px;
+      weight: 600;
+    }
+    line-height: 30px;
+  }
+}
+
+.home_about-us__photos {
+  @include flexible(
+    $wrap: wrap
+  );
+  
+  &__item {
+    width: 50%;
+    height: 450px;
+    @include background(
+      $repeat: 'no-repeat',
+      $size: 'cover',
+      $position: 'center'
+    );
+
+    @include media('down', 991px) {
+      height: 200px;
+    }
+
+    @include media('down', 767px) {
+      width: 100%;
+      height: 300px;
+    }
+  }
+}
+
+
+section.our-products {
+  padding: 50px 0;
+  
+  h2.custom-section-heading {
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+.our-products__item {
+  text-align: center;
+  padding: 20px 0;
+  
+  figure {
+    display: block;
+    text-align: center;
+    padding-bottom: 20px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 25%;
+      height: 1px;
+      margin: 0 auto;
+      background-color: #565251;
+    }
+
+    img {
+      height: 150px;
+    }
+
+    figcaption {
+      padding: 10px 0;
+      font: {
+        family: _font(2);
+        weight: 700;
+        size: 20px;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+    font: {
+      family: _font(2);
+      weight: 600;
+      size: 14px;
+    }
+  }
+
+  a.custom-button {
+    margin-top: 20px;
+  }
+}
+
+
+section.home_gallery {
+  text-align: center;
+  padding: 50px 0;
+
+  .custom-section-heading {
+    margin-bottom: 20px;
+  }
+}
+
+.home_gallery__item {
+  width: 25%;
+  padding: 5px;
+
+  @include media('down', 991px) {
+    width: 33.33%;
+  }
+  @include media('down', 767px) {
+    width: 50%;
+  }
+  @include media('down', 400px) {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+
+section.banner-slider {
+  background-color: #565251;
+  padding: 30px 0;
+}
+
+.banner-slider__container {
+
+  .owl-nav {
+
+    button {
+      position: absolute;
+      top: 50%;
+      @include transform('translateY(-50%)');
+      outline: 0;
+
+      &.owl-prev {
+        left: 0;
+      }
+      &.owl-next {
+        right: 0;
+      }
+
+      span {
+        font: {
+          size: 48px;
+          weight: bold;
+        }
+        color: #fff;
+      }
+    }
+  }
+}
+
+.banner-slider__item {
+  @include flexible(
+    $items: 'center',
+    $justify: 'center'
+  );
+  padding: 0 50px;
+
+  @include media('down', 575px) {
+    @include flex-direction('column');
+    text-align: center;
+  }
+
+  img {
+    min-width: 150px;
+    width: 150px !important;
+    padding-right: 20px;
+  }
+
+  p {
+    margin-bottom: 0;
+    color: darken(#fff, 20%);
+    font: {
+      family: _font(2);
+      size: 22px;
+    }
+
+    a {
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+}
+
+
+section.second-hero {
+  height: 800px;
+  @include background(
+    $image: '../img/second-hero.jpg',
+    $size: 'cover',
+    $position: 'center',
+    $repeat: 'no-repeat'
+  );
+
+  .container-fluid {
+    height: 100%;
+  }
+}
+
+.second-hero_container {
+  height: 100%;
+  text-align: center;
+  @include flexible(
+    $justify: 'center',
+    $items: 'center',
+    $direction: 'column'
+  );
+
+  h1.custom-section-heading {
+    color: #fff;
+    margin-bottom: 30px;
+  }
+}
+
+
+section.home_wine-boutiques {
+  padding: 50px 0;
+  text-align: center;
+  
+  h2.custom-section-heading {
+    margin-bottom: 30px;
+  }
+}
+
+.home_wine-boutiques_item {
+  display: block;
+  position: relative;
+  margin: 15px 0;
+  @include transition(all, 300ms, ease);
+  @include box-shadow(
+    $v: 3px,
+    $blur: 10px,
+    $spread: 3px,
+    $color: rgba(#565251, .3)
+  );
+
+  &:hover {
+    @include box-shadow(
+      $v: 5px,
+      $blur: 10px,
+      $spread: 5px,
+      $color: rgba(#565251, .4)
+    );
+    @include transform('translateY(-15px)');
+  }
+
+  img {
+    width: 100%;
+  }
+
+  h3 {
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(#fff, .75);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font: {
+      size: 16px;
+      family: _font(2);
+      weight: 700;
+    }
+    color: #565251;
+    text-transform: uppercase;
+  }
+}

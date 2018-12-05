@@ -1,0 +1,46 @@
+section.other-page {
+  padding: 100px 0;
+  @include background(
+    $repeat: 'no-repeat',
+    $position: 'left center',
+    $size: '40%'
+  );
+
+  @include media('down', 767px) {
+    background-image: none !important;
+  }
+}
+
+.other-page__mobile-img {
+  display: none;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 20px;
+  @include background(
+    $repeat: 'no-repeat',
+    $size: 'cover',
+    $position: 'center'
+  );
+
+  @include media('down', 767px) {
+    display: block;
+  }
+}
+
+
+ul.other-page__list {
+  margin-top: 30px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 10px 0;
+
+    i {
+      font-size: 5px;
+      margin-right: 20px;
+      vertical-align: middle;
+    }
+  }
+}

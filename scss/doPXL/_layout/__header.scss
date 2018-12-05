@@ -2,6 +2,16 @@ header.main-header {
   position: relative;
   z-index: 2;
   margin-bottom: -150px;
+
+  &.headerTop {
+    margin-bottom: 0;
+    @include background(
+      $image: '../img/header-bg.jpg',
+      $repeat: 'no-repeat',
+      $position: 'bottom',
+      $size: 'cover'
+    );
+  }
 }
 
 .main-header__container {

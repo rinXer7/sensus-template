@@ -1,5 +1,14 @@
 $(document).ready(function() {
 
+  var aboutUsHeight = $('.home_about-us__paragraphs p:first-child').height();
+  console.log(aboutUsHeight);
+  $('.home_about-us__paragraphs').css('max-height', aboutUsHeight);
+
+  $('.home_about-us__container a').click(function() {
+    $('.home_about-us__paragraphs').addClass('showOthers');
+    return false;
+  });
+
   $('section.main-hero').owlCarousel({
     items: 1,
     nav: false
@@ -39,6 +48,5 @@ $(document).ready(function() {
   });
 
   $('.home_gallery__container .home_gallery__item a').simpleLightbox();
-  $('.home_about-us__photos a').simpleLightbox();
 
 });

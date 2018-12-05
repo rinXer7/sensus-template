@@ -281,13 +281,35 @@ section.home_about-us {
   @media only screen and (max-width: 767px) {
     .home_about-us__container {
       width: 100%; } }
-  .home_about-us__container p {
+
+.home_about-us__paragraphs {
+  overflow: hidden;
+  margin-bottom: 20px;
+  height: auto;
+  max-height: 0;
+  -webkit-transition-property: max-height ;
+  -o-transition-property: max-height ;
+  transition-property: max-height ;
+  -webkit-transition-duration: 500ms ;
+  -o-transition-duration: 500ms ;
+  transition-duration: 500ms ; }
+  .home_about-us__paragraphs.showOthers {
+    max-height: 1500px !important; }
+    .home_about-us__paragraphs.showOthers p {
+      visibility: visible;
+      opacity: 1; }
+  .home_about-us__paragraphs p {
     margin: 0;
     padding: 0;
     font-family: 'Cardo', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    line-height: 30px; }
+    line-height: 30px;
+    visibility: hidden;
+    opacity: 0; }
+    .home_about-us__paragraphs p:first-child {
+      visibility: visible;
+      opacity: 1; }
 
 .home_about-us__photos {
   display: -webkit-box;
@@ -299,8 +321,14 @@ section.home_about-us {
     width: 50%;
     height: 450px;
     background-position: center ;
-    background-size: cover ;
-    background-repeat: no-repeat ; }
+    background-size: 100% ;
+    background-repeat: no-repeat ;
+    -webkit-transition-property: all ;
+    -o-transition-property: all ;
+    transition-property: all ;
+    -webkit-transition-duration: 500ms ;
+    -o-transition-duration: 500ms ;
+    transition-duration: 500ms ; }
     @media only screen and (max-width: 991px) {
       .home_about-us__photos__item {
         height: 200px; } }
@@ -308,6 +336,8 @@ section.home_about-us {
       .home_about-us__photos__item {
         width: 100%;
         height: 300px; } }
+    .home_about-us__photos__item:hover {
+      background-size: 110% ; }
 
 section.our-products {
   padding: 50px 0; }

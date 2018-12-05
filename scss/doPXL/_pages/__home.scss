@@ -73,6 +73,22 @@ section.home_about-us {
   @include media('down', 767px) {
     width: 100%;
   }
+}
+
+.home_about-us__paragraphs {
+  overflow: hidden;
+  margin-bottom: 20px;
+  height: auto;
+  max-height: 0;
+  @include transition(max-height, 500ms);
+
+  &.showOthers {
+    max-height: 1500px !important;
+    
+    p {
+      @include visible(true);
+    }
+  }
 
   p {
     @include mp0;
@@ -82,6 +98,12 @@ section.home_about-us {
       weight: 600;
     }
     line-height: 30px;
+    @include visible(false);
+    
+
+    &:first-child {
+      @include visible(true);
+    }
   }
 }
 
@@ -95,9 +117,10 @@ section.home_about-us {
     height: 450px;
     @include background(
       $repeat: 'no-repeat',
-      $size: 'cover',
+      $size: '100%',
       $position: 'center'
     );
+    @include transition(all, 500ms);
 
     @include media('down', 991px) {
       height: 200px;
@@ -106,6 +129,12 @@ section.home_about-us {
     @include media('down', 767px) {
       width: 100%;
       height: 300px;
+    }
+
+    &:hover {
+      @include background(
+        $size: '110%',
+      );
     }
   }
 }

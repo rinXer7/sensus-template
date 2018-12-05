@@ -250,6 +250,8 @@ section.main-hero {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end; }
+  .main-hero__item-1 {
+    background-image: url(../img/hero-1.png); }
   .main-hero__item h1 {
     max-width: 480px;
     margin: 150px 50px;
@@ -350,6 +352,14 @@ section.home_about-us {
       background-position: center ;
       background-size: cover ;
       background-repeat: no-repeat ; }
+      .home_about-us__photos__item__img-1 {
+        background-image: url(../img/EWR00279.jpg); }
+      .home_about-us__photos__item__img-2 {
+        background-image: url(../img/Anemon-Galata-2017-009.jpg); }
+      .home_about-us__photos__item__img-3 {
+        background-image: url(../img/Anemon-Galata-2017-019.jpg); }
+      .home_about-us__photos__item__img-4 {
+        background-image: url(../img/asdsadas1.jpg); }
       .home_about-us__photos__item__img:hover {
         -webkit-transform: scale(1.1) ;
         -ms-transform: scale(1.1) ;
@@ -397,33 +407,70 @@ section.home_gallery {
     margin-bottom: 20px; }
 
 .home_gallery__item {
-  width: 25%;
-  padding: 5px; }
+  width: calc(25% - 10px);
+  margin: 5px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box ;
+  box-sizing: border-box ; }
   @media only screen and (max-width: 991px) {
     .home_gallery__item {
-      width: 33.33%; } }
+      width: calc(33.33% - 10px); } }
   @media only screen and (max-width: 767px) {
     .home_gallery__item {
-      width: 50%; } }
-  @media only screen and (max-width: 400px) {
+      width: calc(50% - 10px); } }
+  @media only screen and (max-width: 575px) {
     .home_gallery__item {
-      width: 100%; } }
+      width: calc(100% - 10px); } }
   .home_gallery__item a {
     display: block;
     width: 100%;
-    overflow: hidden; }
-    .home_gallery__item a:hover img {
-      -webkit-transform: scale(1.1) ;
-      -ms-transform: scale(1.1) ;
-      transform: scale(1.1) ; }
-  .home_gallery__item img {
-    width: 100%;
+    background-position: center ;
+    background-size: cover ;
+    background-repeat: no-repeat ;
+    -webkit-filter: sepia(100%) ;
+    filter: sepia(100%) ;
     -webkit-transition-property: all ;
     -o-transition-property: all ;
     transition-property: all ;
     -webkit-transition-duration: 500ms ;
     -o-transition-duration: 500ms ;
     transition-duration: 500ms ; }
+    .home_gallery__item a:hover {
+      -webkit-transform: scale(1.1) ;
+      -ms-transform: scale(1.1) ;
+      transform: scale(1.1) ;
+      -webkit-filter: sepia(0) ;
+      filter: sepia(0) ; }
+  .home_gallery__item-1 {
+    background-image: url(../img/gallery_1.jpg);
+    height: 580px; }
+  .home_gallery__item-2 {
+    background-image: url(../img/gallery_2.png);
+    height: 375px; }
+  .home_gallery__item-3 {
+    background-image: url(../img/EWR09787.jpg);
+    height: 580px; }
+  .home_gallery__item-4 {
+    background-image: url(../img/Anemon-Galata-2017-018.jpg);
+    height: 375px; }
+  .home_gallery__item-5 {
+    background-image: url(../img/gallery_3.png);
+    height: 375px; }
+  .home_gallery__item-6 {
+    background-image: url(../img/gallery_4.png);
+    height: 375px; }
+  .home_gallery__item-7 {
+    background-image: url(../img/gallery_5.png);
+    height: 580px; }
+  .home_gallery__item-8 {
+    background-image: url(../img/gallery_7.png);
+    height: 580px; }
+  .home_gallery__item-9 {
+    background-image: url(../img/gallery_6.png);
+    height: 400px; }
+  .home_gallery__item-10 {
+    background-image: url(../img/gallery_8.png);
+    height: 375px; }
 
 section.banner-slider {
   background-color: #565251;
@@ -557,6 +604,8 @@ section.other-page {
   @media only screen and (max-width: 767px) {
     section.other-page {
       background-image: none !important; } }
+  section.other-page--img-1 {
+    background-image: url(../img/asd_mob.jpg); }
 
 .other-page__mobile-img {
   display: none;
@@ -569,6 +618,8 @@ section.other-page {
   @media only screen and (max-width: 767px) {
     .other-page__mobile-img {
       display: block; } }
+  .other-page__mobile-img--1 {
+    background-image: url(../img/asd_mob.jpg); }
 
 ul.other-page__list {
   margin-top: 30px;
@@ -620,6 +671,14 @@ section.our-branches {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
+    .our-branches__item__top--bg-1 {
+      background-image: url(../img/osos-1.jpg); }
+    .our-branches__item__top--bg-2 {
+      background-image: url(../img/osos-2.jpg); }
+    .our-branches__item__top--bg-3 {
+      background-image: url(../img/osos-3.jpg); }
+    .our-branches__item__top--bg-4 {
+      background-image: url(../img/osos-4.jpg); }
     .our-branches__item__top h3 {
       margin: 50px 0 100px;
       font-family: 'Cardo', sans-serif;

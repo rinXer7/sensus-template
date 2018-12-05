@@ -9,6 +9,8 @@ section.other-page {
   @include media('down', 767px) {
     background-image: none !important;
   }
+
+  &--img-1 { background-image: url(../img/asd_mob.jpg); }
 }
 
 .other-page__mobile-img {
@@ -25,6 +27,8 @@ section.other-page {
   @include media('down', 767px) {
     display: block;
   }
+
+  &--1 { background-image: url(../img/asd_mob.jpg); }
 }
 
 

@@ -36,6 +36,11 @@ section.our-branches {
       $items: 'center'
     );
 
+    &--bg-1 { background-image: url(../img/osos-1.jpg); }
+    &--bg-2 { background-image: url(../img/osos-2.jpg); }
+    &--bg-3 { background-image: url(../img/osos-3.jpg); }
+    &--bg-4 { background-image: url(../img/osos-4.jpg); }
+
     h3 {
       margin: 50px 0 100px;
 

@@ -14,6 +14,8 @@ section.main-hero {
     $items: 'end'
   );
 
+  &-1 { background-image: url(../img/hero-1.png); }
+
   h1 {
     max-width: 480px;
     margin: 150px 50px;
@@ -136,6 +138,11 @@ section.home_about-us {
         $position: 'center'
       );
 
+      &-1 { background-image: url(../img/EWR00279.jpg); }
+      &-2 { background-image: url(../img/Anemon-Galata-2017-009.jpg); }
+      &-3 { background-image: url(../img/Anemon-Galata-2017-019.jpg); }
+      &-4 { background-image: url(../img/asdsadas1.jpg); }
+
       &:hover {
         @include transform('scale(1.1)');
       }
@@ -210,35 +217,48 @@ section.home_gallery {
 }
 
 .home_gallery__item {
-  width: 25%;
-  padding: 5px;
+  width: calc(25% - 10px);
+  margin: 5px;
+  overflow: hidden;
+  @include box-sizing('border-box');
 
   @include media('down', 991px) {
-    width: 33.33%;
+    width: calc(33.33% - 10px);
   }
   @include media('down', 767px) {
-    width: 50%;
+    width: calc(50% - 10px);
   }
-  @include media('down', 400px) {
-    width: 100%;
+  @include media('down', 575px) {
+    width: calc(100% - 10px);
   }
 
   a {
     display: block;
     width: 100%;
-    overflow: hidden;
+    @include background(
+      $repeat: 'no-repeat',
+      $size: 'cover',
+      $position: 'center'
+    );
+    @include filter('sepia(100%)');
+    @include transition(all, 500ms);
 
     &:hover {
-      img {
-        @include transform('scale(1.1)');
-      }
+      @include transform('scale(1.1)');
+      @include filter('sepia(0)');
     }
   }
 
-  img {
-    width: 100%;
-    @include transition(all, 500ms);
-  }
+  &-1 { background-image: url(../img/gallery_1.jpg); height: 580px; }
+  &-2 { background-image: url(../img/gallery_2.png); height: 375px; }
+  &-3 { background-image: url(../img/EWR09787.jpg); height: 580px; }
+  &-4 { background-image: url(../img/Anemon-Galata-2017-018.jpg); height: 375px; }
+  &-5 { background-image: url(../img/gallery_3.png); height: 375px; }
+  &-6 { background-image: url(../img/gallery_4.png); height: 375px; }
+  &-7 { background-image: url(../img/gallery_5.png); height: 580px; }
+  &-8 { background-image: url(../img/gallery_7.png); height: 580px; }
+  &-9 { background-image: url(../img/gallery_6.png); height: 400px; }
+  &-10 { background-image: url(../img/gallery_8.png); height: 375px; }
 }
 
 

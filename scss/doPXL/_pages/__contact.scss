@@ -1,0 +1,210 @@
+section.contact-page {
+  padding: 50px 0;
+
+  h1.custom-section-heading {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  p.contact-page__paragraph {
+    margin-bottom: 50px;
+  }
+}
+
+.contact-page__form {
+
+  &__item {
+    @include flexible(
+      $items: 'center'
+    );
+    margin-top: 20px;
+    
+    @include media('down', 767px) {
+      display: block;
+    }
+
+    &.label-top {
+      @include align-items('start');
+    }
+
+    &.checkbox {
+      @include justify-content('end');
+
+      label {
+        min-width: 80%;
+        max-width: 80%;
+        padding-left: 0;
+        @include user-select('none');
+
+        @include media('down', 767px) {
+          min-width: none;
+          max-width: none;
+        }
+
+        input {
+          display: none;
+
+          &:checked + p {
+            span {
+              border-color: darken(#565251, 20%);
+              @include box-shadow(
+                $v: 3px,
+                $blur: 10px,
+                $spread: 3px,
+                $color: rgba(#565251, .2)
+              );
+
+              i {
+                @include transform('scale(1)');
+              }
+            }
+          }
+        }
+
+        p {
+          @include flexible($items: 'center');
+          span {
+            display: inline-block;
+            min-width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px #565251 solid;
+            color: #565251;
+            margin-right: 10px;
+            @include box-shadow(
+              $v: 3px,
+              $blur: 6px,
+              $spread: 3px,
+              $color: rgba(#565251, .1)
+            );
+            @include transition(all, 300ms);
+
+            i {
+              @include transform('scale(0)');
+              @include transition(all, 300ms);
+            }
+          }
+        }
+      }
+    }
+
+    label {
+      display: block;
+      min-width: 20%;
+      max-width: 20%;
+      margin-bottom: 0;
+
+      @include media('down', 767px) {
+        min-width: none;
+        max-width: none;
+        margin-bottom: 10px;
+      }
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      display: block;
+      width: 80%;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 10px;
+      font-size: 14px;
+      border: 1px #565251 solid;
+      @include box-shadow(
+        $v: 3px,
+        $blur: 6px,
+        $spread: 3px,
+        $color: rgba(#565251, .1)
+      );
+      outline: 0;
+      @include transition(all, 500ms);
+
+      @include media('down', 767px) {
+        width: 100%;
+      }
+
+      &:focus {
+        border-color: darken(#565251, 20%);
+        @include box-shadow(
+          $v: 3px,
+          $blur: 10px,
+          $spread: 3px,
+          $color: rgba(#565251, .2)
+        );
+      }
+    }
+
+    textarea {
+      display: block;
+      width: 80%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px #565251 solid;
+      resize: none;
+      @include box-shadow(
+        $v: 3px,
+        $blur: 6px,
+        $spread: 3px,
+        $color: rgba(#565251, .1)
+      );
+      outline: 0;
+      @include transition(all, 500ms);
+
+      @include media('down', 767px) {
+        width: 100%;
+      }
+
+      &:focus {
+        border-color: darken(#565251, 20%);
+        @include box-shadow(
+          $v: 3px,
+          $blur: 10px,
+          $spread: 3px,
+          $color: rgba(#565251, .2)
+        );
+      }
+    }
+
+    select {
+      display: block;
+      width: 80%;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 10px;
+      font-size: 14px;
+      border: 1px #565251 solid;
+      @include box-shadow(
+        $v: 3px,
+        $blur: 6px,
+        $spread: 3px,
+        $color: rgba(#565251, .1)
+      );
+      outline: 0;
+      @include transition(all, 500ms);
+
+      @include media('down', 767px) {
+        width: 100%;
+      }
+
+      &:focus {
+        border-color: darken(#565251, 20%);
+        @include box-shadow(
+          $v: 3px,
+          $blur: 10px,
+          $spread: 3px,
+          $color: rgba(#565251, .2)
+        );
+      }
+    }
+
+    button.custom-button {
+      width: 90%;
+      outline: 0;
+
+      @include media('down', 767px) {
+        width: 100%;
+      }
+    }
+  }
+}

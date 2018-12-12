@@ -740,4 +740,178 @@ section.our-branches {
       -ms-flex-align: center;
       align-items: center; }
 
+section.contact-page {
+  padding: 50px 0; }
+  section.contact-page h1.custom-section-heading {
+    margin-bottom: 20px;
+    text-align: center; }
+  section.contact-page p.contact-page__paragraph {
+    margin-bottom: 50px; }
+
+.contact-page__form__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 20px; }
+  @media only screen and (max-width: 767px) {
+    .contact-page__form__item {
+      display: block; } }
+  .contact-page__form__item.label-top {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+  .contact-page__form__item.checkbox {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+    .contact-page__form__item.checkbox label {
+      min-width: 80%;
+      max-width: 80%;
+      padding-left: 0;
+      -webkit-user-select: none ;
+      -moz-user-select: none ;
+      -ms-user-select: none ;
+      user-select: none ; }
+      @media only screen and (max-width: 767px) {
+        .contact-page__form__item.checkbox label {
+          min-width: none;
+          max-width: none; } }
+      .contact-page__form__item.checkbox label input {
+        display: none; }
+        .contact-page__form__item.checkbox label input:checked + p span {
+          border-color: #212020;
+          -webkit-box-shadow:  0 3px 10px 3px rgba(86, 82, 81, 0.2) ;
+          box-shadow:  0 3px 10px 3px rgba(86, 82, 81, 0.2) ; }
+          .contact-page__form__item.checkbox label input:checked + p span i {
+            -webkit-transform: scale(1) ;
+            -ms-transform: scale(1) ;
+            transform: scale(1) ; }
+      .contact-page__form__item.checkbox label p {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .contact-page__form__item.checkbox label p span {
+          display: inline-block;
+          min-width: 25px;
+          height: 25px;
+          line-height: 25px;
+          text-align: center;
+          border: 1px #565251 solid;
+          color: #565251;
+          margin-right: 10px;
+          -webkit-box-shadow:  0 3px 6px 3px rgba(86, 82, 81, 0.1) ;
+          box-shadow:  0 3px 6px 3px rgba(86, 82, 81, 0.1) ;
+          -webkit-transition-property: all ;
+          -o-transition-property: all ;
+          transition-property: all ;
+          -webkit-transition-duration: 300ms ;
+          -o-transition-duration: 300ms ;
+          transition-duration: 300ms ; }
+          .contact-page__form__item.checkbox label p span i {
+            -webkit-transform: scale(0) ;
+            -ms-transform: scale(0) ;
+            transform: scale(0) ;
+            -webkit-transition-property: all ;
+            -o-transition-property: all ;
+            transition-property: all ;
+            -webkit-transition-duration: 300ms ;
+            -o-transition-duration: 300ms ;
+            transition-duration: 300ms ; }
+  .contact-page__form__item label {
+    display: block;
+    min-width: 20%;
+    max-width: 20%;
+    margin-bottom: 0; }
+    @media only screen and (max-width: 767px) {
+      .contact-page__form__item label {
+        min-width: none;
+        max-width: none;
+        margin-bottom: 10px; } }
+  .contact-page__form__item input[type="text"],
+  .contact-page__form__item input[type="email"] {
+    display: block;
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px #565251 solid;
+    -webkit-box-shadow:  0 3px 6px 3px rgba(86, 82, 81, 0.1) ;
+    box-shadow:  0 3px 6px 3px rgba(86, 82, 81, 0.1) ;
+    outline: 0;
+    -webkit-transition-property: all ;
+    -o-transition-property: all ;
+    transition-property: all ;
+    -webkit-transition-duration: 500ms ;
+    -o-transition-duration: 500ms ;
+    transition-duration: 500ms ; }
+    @media only screen and (max-width: 767px) {
+      .contact-page__form__item input[type="text"],
+      .contact-page__form__item input[type="email"] {
+        width: 100%; } }
+    .contact-page__form__item input[type="text"]:focus,
+    .contact-page__form__item input[type="email"]:focus {
+      border-color: #212020;
+      -webkit-box-shadow:  0 3px 10px 3px rgba(86, 82, 81, 0.2) ;
+      box-shadow:  0 3px 10px 3px rgba(86, 82, 81, 0.2) ; }
+  .contact-page__form__item textarea {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px #565251 solid;
+    resize: none;
+    -webkit-box-shadow:  0 3px 6px 3px rgba(86, 82, 81, 0.1) ;
+    box-shadow:  0 3px 6px 3px rgba(86, 82, 81, 0.1) ;
+    outline: 0;
+    -webkit-transition-property: all ;
+    -o-transition-property: all ;
+    transition-property: all ;
+    -webkit-transition-duration: 500ms ;
+    -o-transition-duration: 500ms ;
+    transition-duration: 500ms ; }
+    @media only screen and (max-width: 767px) {
+      .contact-page__form__item textarea {
+        width: 100%; } }
+    .contact-page__form__item textarea:focus {
+      border-color: #212020;
+      -webkit-box-shadow:  0 3px 10px 3px rgba(86, 82, 81, 0.2) ;
+      box-shadow:  0 3px 10px 3px rgba(86, 82, 81, 0.2) ; }
+  .contact-page__form__item select {
+    display: block;
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px #565251 solid;
+    -webkit-box-shadow:  0 3px 6px 3px rgba(86, 82, 81, 0.1) ;
+    box-shadow:  0 3px 6px 3px rgba(86, 82, 81, 0.1) ;
+    outline: 0;
+    -webkit-transition-property: all ;
+    -o-transition-property: all ;
+    transition-property: all ;
+    -webkit-transition-duration: 500ms ;
+    -o-transition-duration: 500ms ;
+    transition-duration: 500ms ; }
+    @media only screen and (max-width: 767px) {
+      .contact-page__form__item select {
+        width: 100%; } }
+    .contact-page__form__item select:focus {
+      border-color: #212020;
+      -webkit-box-shadow:  0 3px 10px 3px rgba(86, 82, 81, 0.2) ;
+      box-shadow:  0 3px 10px 3px rgba(86, 82, 81, 0.2) ; }
+  .contact-page__form__item button.custom-button {
+    width: 90%;
+    outline: 0; }
+    @media only screen and (max-width: 767px) {
+      .contact-page__form__item button.custom-button {
+        width: 100%; } }
+
 /*# sourceMappingURL=app.css.map */

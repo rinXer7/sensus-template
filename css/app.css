@@ -914,4 +914,81 @@ section.contact-page {
       .contact-page__form__item button.custom-button {
         width: 100%; } }
 
+section.menu-page {
+  text-align: center; }
+  section.menu-page h1.menu-page__title {
+    display: inline-block;
+    font-family: 'Source Serif Pro', sans-serif;
+    padding: 0 20px;
+    margin: 50px 0;
+    color: #D55E3B;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 48px;
+    border-bottom: 2px #D55E3B solid; }
+    section.menu-page h1.menu-page__title span {
+      display: block;
+      font-weight: bold; }
+
+.menu-page__container {
+  background-image: url(../img/menu-page-bg.png) ;
+  background-position: center ;
+  background-size: cover ;
+  background-repeat: no-repeat ; }
+
+.our-menu__block {
+  padding: 30px 0;
+  text-align: left; }
+  .our-menu__block__title {
+    color: #D55E3B;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Source Serif Pro', sans-serif;
+    margin-top: 0;
+    margin-bottom: -15px; }
+  .our-menu__block__item {
+    padding-top: 30px;
+    font-family: 'Source Serif Pro', sans-serif; }
+    .our-menu__block__item__head {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .our-menu__block__item__head h5 {
+        margin: 0;
+        font-size: 18px; }
+      .our-menu__block__item__head span {
+        display: block;
+        font-size: 22px;
+        min-width: 60px;
+        line-height: normal;
+        text-align: right; }
+    .our-menu__block__item p {
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: bold; }
+      .our-menu__block__item p::before {
+        content: '('; }
+      .our-menu__block__item p::after {
+        content: ')'; }
+
+.menu-page__header {
+  margin-right: -15px;
+  margin-left: -17px; }
+  .menu-page__header img {
+    width: 100%; }
+
+.menu-page__footer {
+  background-image: url(../img/menu-footer-bg.png) ;
+  background-position: center right ;
+  background-size: contain ;
+  background-repeat: no-repeat ;
+  height: 300px;
+  margin: 0 -15px; }
+
 /*# sourceMappingURL=app.css.map */

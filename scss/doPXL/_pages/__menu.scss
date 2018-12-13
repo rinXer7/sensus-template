@@ -1,0 +1,103 @@
+section.menu-page {
+  text-align: center;
+
+  h1.menu-page__title {
+    display: inline-block;
+    font-family: _font(1);
+    padding: 0 20px;
+    margin: 50px 0;
+    color: #D55E3B;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 48px;
+    border-bottom: 2px #D55E3B solid;
+
+    span {
+      display: block;
+      font-weight: bold;
+    }
+  }
+}
+
+.menu-page__container {
+  @include background(
+    $image: '../img/menu-page-bg.png',
+    $size: cover,
+    $position: center,
+    $repeat: no-repeat
+  );
+}
+
+.our-menu__block {
+  padding: 30px 0;
+  text-align: left;
+
+  &__title {
+    color: #D55E3B;
+    text-transform: uppercase;
+    font: {
+      weight: bold;
+      family: _font(1);
+    }
+    margin-top: 0;
+    margin-bottom: -15px;
+  }
+
+  &__item {
+    padding-top: 30px;
+    font-family: _font(1);
+
+    &__head {
+      @include flexible(
+        $justify: 'between',
+        $items: 'center'
+      );
+
+      h5 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      span {
+        display: block;
+        font-size: 22px;
+        min-width: 60px;
+        line-height: normal;
+        text-align: right;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+      font: {
+        size: 14px;
+        weight: bold;
+      }
+
+      &::before {
+        content: '(';
+      }
+      &::after {
+        content: ')';
+      }
+    }
+  }
+}
+
+.menu-page__header {
+  margin-right: -15px;
+  margin-left: -17px;
+  img {
+    width: 100%;
+  }
+}
+.menu-page__footer {
+  @include background(
+    $image: '../img/menu-footer-bg.png',
+    $size: contain,
+    $position: center right,
+    $repeat: no-repeat
+  );
+  height: 300px;
+  margin: 0 -15px;
+}

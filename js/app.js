@@ -21,14 +21,8 @@ $(document).ready(function() {
     return false;
   });
 
-  var prevButton = `
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.5px" height="51.5px">
-	  <path fill-rule="evenodd" stroke="rgb(191, 191, 191)" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M23.500,47.500 L1.500,24.500 L24.500,2.500 "/>
-  </svg>`;
-  var nextButton = `
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31.5px" height="55.5px">
-	  <path fill-rule="evenodd" stroke="rgb(191, 191, 191)" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M3.500,49.500 L25.500,26.500 L2.500,4.500 "/>
-  </svg>`;
+  var prevButton = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.5px" height="51.5px"><path fill-rule="evenodd" stroke="rgb(191, 191, 191)" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M23.500,47.500 L1.500,24.500 L24.500,2.500 "/></svg>';
+  var nextButton = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31.5px" height="55.5px"><path fill-rule="evenodd" stroke="rgb(191, 191, 191)" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M3.500,49.500 L25.500,26.500 L2.500,4.500 "/></svg>';
 
   $('.banner-slider__container').owlCarousel({
     items: 1,
@@ -51,7 +45,9 @@ $(document).ready(function() {
   });
 
   $('.home_gallery__container').masonry({
-    itemSelector: '.home_gallery__item'
+    itemSelector: '.home_gallery__item',
+    columnWidth: '.home_gallery__item',
+    percentPosition: true
   });
 
   $('.home_gallery__container .home_gallery__item a').simpleLightbox();

@@ -51,7 +51,9 @@ $(document).ready(function() {
   });
 
   $('.home_gallery__container').masonry({
-    itemSelector: '.home_gallery__item'
+    itemSelector: '.home_gallery__item',
+    columnWidth: '.home_gallery__item',
+    percentPosition: true
   });
 
   $('.home_gallery__container .home_gallery__item a').simpleLightbox();
